@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Phần đầu gradient: logo + tên ứng dụng -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_header"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="56dp"
+            android:paddingBottom="88dp">
+
+            <TextView
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                android:background="@drawable/bg_circle"
+                android:gravity="center"
+                android:text="📦"
+                android:textSize="40sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/login_subtitle"
+                android:textColor="@color/white_80"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- Thẻ đăng nhập nổi lên trên phần đầu -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-60dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_card"
+            android:elevation="8dp"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_welcome"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- (1) Tên đăng nhập -->
+            <TextView
+                style="@style/FieldLabel"
+                android:text="@string/label_username" />
+
+            <EditText
+                android:id="@+id/edtUsername"
+                style="@style/FieldInput"
+                android:hint="@string/hint_username"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <!-- (2) Mật khẩu -->
+            <TextView
+                style="@style/FieldLabel"
+                android:text="@string/label_password" />
+
+            <EditText
+                android:id="@+id/edtPassword"
+                style="@style/FieldInput"
+                android:hint="@string/hint_password"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+
+            <!-- (3) Thông báo lỗi: ẩn khi chưa có lỗi -->
+            <TextView
+                android:id="@+id/tvError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_error"
+                android:paddingStart="14dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="14dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <!-- (4) Nút Đăng nhập -->
+            <Button
+                android:id="@+id/btnLogin"
+                style="@style/BigButton"
+                android:layout_marginTop="22dp"
+                android:text="@string/btn_login" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/Chip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/sample_account" />
+    </LinearLayout>
+</ScrollView>
